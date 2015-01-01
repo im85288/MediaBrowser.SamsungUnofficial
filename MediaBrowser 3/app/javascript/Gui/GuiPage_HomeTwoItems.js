@@ -104,7 +104,7 @@ GuiPage_HomeTwoItems.start = function(title1, url1, title2, url2,selectedItem,to
 				"</div>";
 	
 		//Set isResume based on title - used in UpdateDisplayedItems
-		if (title1 == "Resume" || title1 == "Resume All Items" ) {
+		if (title1 == "Resume" || title1 == "Resume All Items"  || title1 == "TV Next Up") {
 			this.isResume = true;
 		} else {
 			this.isResume = false;
@@ -154,7 +154,7 @@ GuiPage_HomeTwoItems.start = function(title1, url1, title2, url2,selectedItem,to
 		this.updateSelectedItems(updateCounter);	
 
 		//Set isResume based on title - used in UpdateDisplayedItems
-		if (title2 == "Resume" || title2 == "Resume All Items") {
+		if (title2 == "Resume" || title2 == "Resume All Items" || title2 == "TV Next Up") {
 			this.isResume2 = true;
 		} else {
 			this.isResume2 = false;

@@ -87,7 +87,26 @@ GuiPlayer.startPlayback = function(MediaSource, resumeTicksSamsung) {
     //Set PageContent
     var fileInfo = this.PlayerData.Name;
     if (this.PlayerData.Type == "Episode") {
-    	fileInfo =  this.PlayerData.SeriesName + " S" + this.PlayerData.ParentIndexNumber + ", E" + this.PlayerData.IndexNumber + " - " + this.PlayerData.Name;
+    	
+    	var seasonNumber = this.PlayerData.ParentIndexNumber;
+		var seasonString = "";
+		if (seasonNumber < 10){
+			seasonString = "0" + seasonNumber;
+		}
+		else{
+			seasonString = seasonNumber;
+		}
+		
+		var episodeNumber = this.PlayerData.IndexNumber;
+		var episodeString = "";
+		if (episodeNumber < 10){
+			episodeString = "0" + episodeNumber;
+		}
+		else{
+			episodeString = episodeNumber;
+		}
+			
+    	fileInfo =  this.PlayerData.SeriesName + " S" + seasonString + "E" + episodeString + " - " + this.PlayerData.Name;
     }
 
     if (MediaSource[0].Protocol != "Http") {
